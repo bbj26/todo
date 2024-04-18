@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "e890c2a3-4f90-4cee-8f83-866f09070059",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33269819"
+	},
+	"item": [
+		{
+			"name": "Create a Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Do homework\",\n    \"done\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/todos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Do homework\",\n    \"done\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/todos/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-k7HVKrgqFeCI02HLyVMFaEUc09E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 10:38:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2024-04-18T10:38:42.668Z\",\n    \"updatedAt\": \"2024-04-18T10:38:42.669Z\",\n    \"id\": \"ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a\",\n    \"text\": \"Do homework\",\n    \"done\": false\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Do homework\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/todos/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-mP0po6+WJtP4vRdFAjmo+aUPVNQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:08:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": [\n        \"Todo.done cannot be null\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Todos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "succsessful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/todos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "337"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"151-QvkCdYkmu98fLwEldgk7CungeG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:08:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"17a0553e-02d2-4249-a972-f62e0bf046f2\",\n        \"text\": \"Do homework\",\n        \"done\": false,\n        \"createdAt\": \"2024-04-18T11:06:17.730Z\",\n        \"updatedAt\": \"2024-04-18T11:06:17.731Z\"\n    },\n    {\n        \"id\": \"ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a\",\n        \"text\": \"Do homework until it's too late\",\n        \"done\": false,\n        \"createdAt\": \"2024-04-18T10:38:42.668Z\",\n        \"updatedAt\": \"2024-04-18T11:03:59.969Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Todo by Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "succsessful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/todos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "177"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b1-O5kUZ36lub4+JM9K+utc19EJ56I\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:27:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a\",\n    \"text\": \"Do homework until it's too late\",\n    \"done\": false,\n    \"createdAt\": \"2024-04-18T10:38:42.668Z\",\n    \"updatedAt\": \"2024-04-18T11:03:59.969Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a Todo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Do homework until it's too late\",\n    \"done\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/todos/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Do homework until it is too late\",\n    \"done\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/todos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-HhU2zs7T0J7dJQ6VgOnY+6WsSm0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:28:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a\",\n    \"text\": \"Do homework until it is too late\",\n    \"done\": false,\n    \"createdAt\": \"2024-04-18T10:38:42.668Z\",\n    \"updatedAt\": \"2024-04-18T11:28:13.966Z\"\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Do homework until it is too late\",\n    \"done\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/todos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-HhU2zs7T0J7dJQ6VgOnY+6WsSm0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:28:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"ebf1dfe2-1d03-4ef4-adc0-127586ccbe7a\",\n    \"text\": \"Do homework until it is too late\",\n    \"done\": false,\n    \"createdAt\": \"2024-04-18T10:38:42.668Z\",\n    \"updatedAt\": \"2024-04-18T11:28:13.966Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Todo by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Do homework until it's too late\",\n    \"done\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/todos/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "22d27b79-e37e-4865-8edc-c6be09bc8f06"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "todo not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Do homework until it's too late\",\n    \"done\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/todos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "22d27b79-e37e-4865-8edc-c6be09bc8f06"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-hbVbp6pokbjQrhGda3xWYX1rRx4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 11:30:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Todo not found\"\n}"
+				}
+			]
+		}
+	]
+}
