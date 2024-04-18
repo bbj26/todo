@@ -27,7 +27,6 @@ const createTodo = async (newTodoText) => {
       text: newTodoText,
       done: false,
     });
-    console.log(response);
     return response.data;
   } catch (error) {
     console.error("Error creating todo:", error);
