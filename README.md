@@ -49,3 +49,7 @@ REACT_APP_SERVER_URL=http://localhost:3000/api
 3. `npm install`
 4. `npm run start`
 
+
+## Run server tests:
+1. `cd server`
+2. `npm run test`
