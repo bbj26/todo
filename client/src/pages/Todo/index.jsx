@@ -9,8 +9,8 @@ import {
   ListItemSecondaryAction,
   IconButton,
   Typography,
-} from "@material-ui/core";
-import { Delete as DeleteIcon, Edit as EditIcon } from "@material-ui/icons";
+} from "@mui/material";
+import { Delete as DeleteIcon, Edit as EditIcon } from "@mui/icons-material";
 import { getTodos, createTodo, updateTodo, deleteTodo } from "../../api/todo";
 
 function Todo() {
